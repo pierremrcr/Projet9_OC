@@ -50,7 +50,7 @@ public interface ComptabiliteManager {
      * <p><strong>Attention :</strong> l'écriture n'est pas enregistrée en persistance</p>
      * @param pEcritureComptable L'écriture comptable concernée
      */
-    void addReference(EcritureComptable pEcritureComptable);
+    void addReference(EcritureComptable pEcritureComptable) throws FunctionalException;
 
     /**
      * Vérifie que l'Ecriture comptable respecte les règles de gestion.
@@ -82,4 +82,10 @@ public interface ComptabiliteManager {
      * @param pId l'id de l'écriture
      */
     void deleteEcritureComptable(Integer pId);
+
+    void checkIfRefIsToTheRightFormat(EcritureComptable pEcritureComptable) throws FunctionalException;
+
+    void checkIfEcritureContainsAtLeastTwoLines(EcritureComptable pEcritureComptable) throws FunctionalException;
+
+    void checkIfEcritureIsEquilibree(EcritureComptable pEcritureComptable) throws FunctionalException;
 }

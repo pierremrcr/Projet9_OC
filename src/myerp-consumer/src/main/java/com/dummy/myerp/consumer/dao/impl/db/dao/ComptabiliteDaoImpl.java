@@ -1,9 +1,12 @@
 package com.dummy.myerp.consumer.dao.impl.db.dao;
 
 import java.sql.Types;
+import java.util.Calendar;
 import java.util.List;
 
+import com.dummy.myerp.model.bean.comptabilite.*;
 import org.springframework.dao.EmptyResultDataAccessException;
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
@@ -14,11 +17,9 @@ import com.dummy.myerp.consumer.dao.impl.db.rowmapper.comptabilite.JournalCompta
 import com.dummy.myerp.consumer.dao.impl.db.rowmapper.comptabilite.LigneEcritureComptableRM;
 import com.dummy.myerp.consumer.db.AbstractDbConsumer;
 import com.dummy.myerp.consumer.db.DataSourcesEnum;
-import com.dummy.myerp.model.bean.comptabilite.CompteComptable;
-import com.dummy.myerp.model.bean.comptabilite.EcritureComptable;
-import com.dummy.myerp.model.bean.comptabilite.JournalComptable;
-import com.dummy.myerp.model.bean.comptabilite.LigneEcritureComptable;
 import com.dummy.myerp.technical.exception.NotFoundException;
+
+import static com.dummy.myerp.technical.util.ConvertDate.convertDateToCalendar;
 
 
 /**
@@ -251,6 +252,97 @@ public class ComptabiliteDaoImpl extends AbstractDbConsumer implements Comptabil
         vSqlParams.addValue("id", pId);
         vJdbcTemplate.update(SQLdeleteEcritureComptable, vSqlParams);
     }
+
+    @Override
+    public boolean isCodeJournalValid(String code) {
+
+        NamedParameterJdbcTemplate jdbcTemplate = new NamedParameterJdbcTemplate(getDataSource(DataSourcesEnum.MYERP));
+
+        String sqlQuery = "select * from myerp.journal_comptable where code = :code";
+        MapSqlParameterSource vSqlParams = new MapSqlParameterSource();
+        vSqlParams.addValue("code", code);
+
+        try {
+            jdbcTemplate.queryForObject(sqlQuery, vSqlParams, new BeanPropertyRowMapper<>(JournalComptable.class));
+            return true;
+        } catch (EmptyResultDataAccessException vEx) {
+            return false;
+        }
+    }
+
+
+    @Override
+    public SequenceEcritureComptable updateSequenceEcritureComptable(SequenceEcritureComptable sequenceEcritureComptable) throws NotFoundException {
+
+        NamedParameterJdbcTemplate vJdbcTemplate = new NamedParameterJdbcTemplate(getDataSource(DataSourcesEnum.MYERP));
+
+        String sqlUpdate = "UPDATE myerp.sequence_ecriture_comptable SET derniere_valeur = :derniere_valeur where annee = :annee and journal_code = :journal_code";
+        MapSqlParameterSource vSqlParams = new MapSqlParameterSource();
+        vSqlParams.addValue("derniere_valeur", sequenceEcritureComptable.getDerniereValeur() + 1);
+        vSqlParams.addValue("annee", sequenceEcritureComptable.getAnnee());
+        vSqlParams.addValue("journal_code", sequenceEcritureComptable.getCodeJournal());
+
+        try {
+            vJdbcTemplate.update(sqlUpdate, vSqlParams);
+            return getSequenceEcritureComptable(sequenceEcritureComptable.getAnnee(), sequenceEcritureComptable.getCodeJournal());
+        } catch (NotFoundException e) {
+            throw new NotFoundException("Update impossible : pas de sequence pour la combinaison journal/année");
+        }
+    }
+
+    @Override
+    public SequenceEcritureComptable getSequenceEcritureComptable(int year, String codeJournal) throws NotFoundException {
+        NamedParameterJdbcTemplate vJdbcTemplate = new NamedParameterJdbcTemplate(getDataSource(DataSourcesEnum.MYERP));
+
+        String sqlSelect = "SELECT * from myerp.sequence_ecriture_comptable where annee = :annee and journal_code = :journal_code";
+        MapSqlParameterSource vSqlParams = new MapSqlParameterSource();
+        vSqlParams.addValue("annee", year);
+        vSqlParams.addValue("journal_code", codeJournal);
+
+        SequenceEcritureComptable sequenceEcritureComptable;
+        try {
+            sequenceEcritureComptable = vJdbcTemplate.queryForObject(sqlSelect, vSqlParams, new BeanPropertyRowMapper<>(SequenceEcritureComptable.class));
+            return sequenceEcritureComptable;
+        } catch (EmptyResultDataAccessException vEx) {
+            throw new NotFoundException("Sequence comptable non existante");
+        }
+    }
+
+
+
+    @Override
+    public void insertSequenceEcritureComptable(int year, String code) {
+
+        NamedParameterJdbcTemplate vJdbcTemplate = new NamedParameterJdbcTemplate(getDataSource(DataSourcesEnum.MYERP));
+
+        String sql = "INSERT INTO myerp.sequence_ecriture_comptable (journal_code, annee, derniere_valeur) VALUES (:journal_code, :annee, :derniere_valeur)";
+        MapSqlParameterSource vSqlParams = new MapSqlParameterSource();
+        vSqlParams.addValue("journal_code", code);
+        vSqlParams.addValue("annee", year);
+        vSqlParams.addValue("derniere_valeur", 1);
+        vJdbcTemplate.update(sql, vSqlParams);
+    }
+
+
+    @Override
+    public SequenceEcritureComptable getSequenceJournal(EcritureComptable pEcritureComptable) throws NotFoundException {
+
+        NamedParameterJdbcTemplate jdbcTemplate = new NamedParameterJdbcTemplate(getDataSource(DataSourcesEnum.MYERP));
+
+        String sqlQuery = "select * from myerp.sequence_ecriture_comptable where journal_code = :journal_code and annee = :annee";
+        MapSqlParameterSource vSqlParams = new MapSqlParameterSource();
+        vSqlParams.addValue("journal_code", pEcritureComptable.getJournal().getCode());
+        vSqlParams.addValue("annee", convertDateToCalendar(pEcritureComptable.getDate()).get(Calendar.YEAR));
+
+        try {
+            SequenceEcritureComptable sequenceEcritureComptable = jdbcTemplate.queryForObject(sqlQuery, vSqlParams, new BeanPropertyRowMapper<>(SequenceEcritureComptable.class));
+            return sequenceEcritureComptable;
+
+        } catch (EmptyResultDataAccessException vEx) {
+            throw new NotFoundException("SequenceEcritureComptable pour ce journal et cette année inexistante");
+        }
+    }
+
 
     /** SQLdeleteListLigneEcritureComptable */
     private static String SQLdeleteListLigneEcritureComptable;

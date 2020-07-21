@@ -76,6 +76,10 @@
             <artifactId>postgresql</artifactId>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>com.dummy.myerp</groupId>
+            <artifactId>myerp-technical</artifactId>
+        </dependency>
     </dependencies>
 
 

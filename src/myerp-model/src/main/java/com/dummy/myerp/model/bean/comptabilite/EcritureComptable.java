@@ -24,19 +24,20 @@ public class EcritureComptable {
     /** Journal comptable */
     @NotNull private JournalComptable journal;
     /** The Reference. */
-    @Pattern(regexp = "\\D{1,5}-\\d{4}/\\d{5}")
+    @Pattern(message = "Le format de la référence n'est pas correct.", regexp = "\\w{2}-\\d{4}/\\d{5}")
     private String reference;
     /** The Date. */
-    @NotNull private Date date;
+    @NotNull (message = "La date ne doit pas être null.")
+    private Date date;
 
     /** The Libelle. */
-    @NotNull
+    @NotNull (message = "Le libellé ne doit pas être null.")
     @Size(min = 1, max = 200)
     private String libelle;
 
     /** La liste des lignes d'écriture comptable. */
     @Valid
-    @Size(min = 2)
+    @Size(message = "L'écriture comptable doit avoir au moins deux lignes : une ligne au débit et une ligne au crédit.",min = 2)
     private final List<LigneEcritureComptable> listLigneEcriture = new ArrayList<>();
 
 
@@ -90,15 +91,15 @@ public class EcritureComptable {
      *
      * @return {@link BigDecimal}, {@link BigDecimal#ZERO} si aucun montant au débit
      */
-    // TODO à tester
+
     public BigDecimal getTotalDebit() {
-        BigDecimal vRetour = BigDecimal.ZERO.setScale(2,BigDecimal.ROUND_HALF_UP);
+        BigDecimal totalDebit = BigDecimal.ZERO;
         for (LigneEcritureComptable vLigneEcritureComptable : listLigneEcriture) {
             if (vLigneEcritureComptable.getDebit() != null) {
-                vRetour = vRetour.add(vLigneEcritureComptable.getDebit());
+                totalDebit = totalDebit.add(vLigneEcritureComptable.getDebit());
             }
         }
-        return vRetour;
+        return totalDebit.setScale(2,BigDecimal.ROUND_UP);
     }
 
     /**
@@ -107,13 +108,13 @@ public class EcritureComptable {
      * @return {@link BigDecimal}, {@link BigDecimal#ZERO} si aucun montant au crédit
      */
     public BigDecimal getTotalCredit() {
-        BigDecimal vRetour = BigDecimal.ZERO.setScale(2, BigDecimal.ROUND_HALF_UP); //Format(0,00)
+        BigDecimal totalCredit = BigDecimal.ZERO; //Format(0,00)
         for (LigneEcritureComptable vLigneEcritureComptable : listLigneEcriture) {
             if (vLigneEcritureComptable.getCredit()!= null) { //Correction credit au lieu de débit
-                vRetour = vRetour.add(vLigneEcritureComptable.getCredit());
+                totalCredit = totalCredit.add(vLigneEcritureComptable.getCredit());
             }
         }
-        return vRetour;
+        return totalCredit.setScale(2, BigDecimal.ROUND_UP);
     }
 
     /**
@@ -121,8 +122,6 @@ public class EcritureComptable {
      * @return boolean
      */
     public boolean isEquilibree() {
-        BigDecimal c = getTotalCredit();
-        BigDecimal d = getTotalCredit();
         boolean vRetour = this.getTotalDebit().equals(getTotalCredit());
         return vRetour;
     }
