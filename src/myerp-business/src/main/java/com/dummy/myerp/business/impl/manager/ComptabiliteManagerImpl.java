@@ -196,13 +196,12 @@ public class ComptabiliteManagerImpl extends AbstractBusinessManager implements 
     }
 
 
-    /**
-     * Vérifie que l'Ecriture comptable respecte les règles de gestion liées au contexte
-     * (unicité de la référence, année comptable non cloturé...)
-     *
-     * @param pEcritureComptable -
-     * @throws FunctionalException Si l'Ecriture comptable ne respecte pas les règles de gestion
-     */
+    public BigDecimal RG_Compta_4(EcritureComptable pEcritureComptable)  {
+      return pEcritureComptable.getTotalCredit();
+    }
+
+
+
     protected void checkEcritureComptableContext(EcritureComptable pEcritureComptable) throws FunctionalException {
         // ===== RG_Compta_6 : La référence d'une écriture comptable doit être unique
         if (StringUtils.isNoneEmpty(pEcritureComptable.getReference())) {

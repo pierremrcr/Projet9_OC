@@ -1,5 +1,6 @@
 package com.dummy.myerp.business.contrat.manager;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 import com.dummy.myerp.model.bean.comptabilite.CompteComptable;
@@ -88,4 +89,6 @@ public interface ComptabiliteManager {
     void checkIfEcritureContainsAtLeastTwoLines(EcritureComptable pEcritureComptable) throws FunctionalException;
 
     void checkIfEcritureIsEquilibree(EcritureComptable pEcritureComptable) throws FunctionalException;
+
+    BigDecimal RG_Compta_4(EcritureComptable pEcritureComptable);
 }

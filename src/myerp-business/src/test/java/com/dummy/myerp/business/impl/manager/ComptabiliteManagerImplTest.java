@@ -10,6 +10,7 @@ import com.dummy.myerp.technical.exception.FunctionalException;
 import com.dummy.myerp.technical.exception.NotFoundException;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
@@ -26,6 +27,7 @@ import java.util.List;
 
 import static java.sql.Date.valueOf;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.Matchers.any;
 import static org.mockito.Mockito.when;
@@ -110,10 +112,21 @@ public class ComptabiliteManagerImplTest extends AbstractBusinessManager {
                 null, new BigDecimal(123),
                 null));
         manager.checkIfEcritureContainsAtLeastTwoLines(vEcritureComptable);
+
     }
 
 
-    @Test(expected = FunctionalException.class)
+    @Test
+    public void checkEcritureComptableUnitRG4()  {
+        EcritureComptable vEcritureComptable = new EcritureComptable();
+        vEcritureComptable.getListLigneEcriture().add(new LigneEcritureComptable(new CompteComptable(), "libellé", new BigDecimal("-35.40"), null));
+        vEcritureComptable.getListLigneEcriture().add(new LigneEcritureComptable(new CompteComptable(), "libellé", null, new BigDecimal("-35.40")));
+        Assertions.assertEquals(new BigDecimal("-35.40"), manager.RG_Compta_4(vEcritureComptable), "1 débit / 1 crédit, négatif");
+        }
+
+
+
+    @Test
     public void checkEcritureComptableUnitRG5() throws Exception {
         EcritureComptable vEcritureComptable;
         vEcritureComptable = new EcritureComptable();
@@ -161,7 +174,7 @@ public class ComptabiliteManagerImplTest extends AbstractBusinessManager {
 
     }
 
-    @Test(expected = FunctionalException.class)
+    @Test
     public void checkEcritureComptableUnitRG7() throws Exception {
 
         EcritureComptable ecritureComptable = new EcritureComptable();
@@ -174,10 +187,11 @@ public class ComptabiliteManagerImplTest extends AbstractBusinessManager {
                 new BigDecimal("123.987")));
 
         FunctionalException thrown3 = assertThrows(FunctionalException.class, () -> manager.checkEcritureComptableUnit_Contraintes(ecritureComptable));
-        assertEquals("L'écriture comptable ne respecte pas les contraintes de validation. " +
-                        "Le format du montant comptable est invalide: max 13 chiffres et 2 décimaux. " +
-                        "Le format du montant comptable est invalide: max 13 chiffres et 2 décimaux.",
-                thrown3.getMessage());
+
+
+        assertTrue(thrown3.getMessage().contains("L'écriture comptable ne respecte pas les contraintes de validation"));
+        assertTrue(thrown3.getMessage().contains("Valeur numérique hors limite"));
+
     }
 
 
