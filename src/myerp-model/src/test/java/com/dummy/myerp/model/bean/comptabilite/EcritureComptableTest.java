@@ -73,6 +73,23 @@ public class EcritureComptableTest {
 
     }
 
+    @Test
+    public void getSoldeTest() {
+
+        EcritureComptable ecritureComptable1  = new EcritureComptable();
+        ecritureComptable1.getListLigneEcriture().add(debit_positif_250);
+        ecritureComptable1.getListLigneEcriture().add(debit_positif_49_50);
+        ecritureComptable1.getListLigneEcriture().add(credit_positif_100);
+        assertEquals("Le solde est négatif", ecritureComptable1.getSolde());
+
+        EcritureComptable ecritureComptable2  = new EcritureComptable();
+        ecritureComptable2.getListLigneEcriture().add(credit_positif_100);
+        ecritureComptable2.getListLigneEcriture().add(credit_positif_150);
+        ecritureComptable2.getListLigneEcriture().add(debit_positif_49_50);
+        assertEquals("Le solde est positif", ecritureComptable2.getSolde());
+
+    }
+
 
     @Test
     public void getTotalCreditTest() {

@@ -91,4 +91,6 @@ public interface ComptabiliteManager {
     void checkIfEcritureIsEquilibree(EcritureComptable pEcritureComptable) throws FunctionalException;
 
     BigDecimal RG_Compta_4(EcritureComptable pEcritureComptable);
+
+    void RG_Compta_1(EcritureComptable ecritureComptable) throws FunctionalException;
 }

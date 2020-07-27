@@ -126,6 +126,22 @@ public class EcritureComptable {
         return vRetour;
     }
 
+    public String getSolde() {
+
+        String message;
+
+        if (this.getTotalCredit().compareTo(this.getTotalDebit()) > 0) {
+            message ="Le solde est positif";
+        } else {
+            message = "Le solde est négatif";
+
+        }
+
+        return message;
+
+    }
+
+
     // ==================== Méthodes ====================
     @Override
     public String toString() {

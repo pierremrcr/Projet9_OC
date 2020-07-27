@@ -196,10 +196,15 @@ public class ComptabiliteManagerImpl extends AbstractBusinessManager implements 
     }
 
 
+
     public BigDecimal RG_Compta_4(EcritureComptable pEcritureComptable)  {
       return pEcritureComptable.getTotalCredit();
     }
 
+    @Override
+    public void RG_Compta_1(EcritureComptable ecritureComptable) throws FunctionalException {
+
+    }
 
 
     protected void checkEcritureComptableContext(EcritureComptable pEcritureComptable) throws FunctionalException {
