@@ -1,8 +1,8 @@
 language: java
 
-jdk: openjdk8
+install: ant deps
 
-install: true
+jdk: openjdk8
 
 services:
   - postgresql

@@ -173,7 +173,7 @@ public class ComptabiliteManagerImplTest extends AbstractBusinessManager {
         manager.checkIfRefIsToTheRightFormat(vEcritureComptable);
     }
 
-    @Test(expected = FunctionalException.class)
+    @Test
     public void checkEcritureComptableUnitRG6() throws Exception {
 
         // Nouvelle écriture pas encore persistée et donc sans ID

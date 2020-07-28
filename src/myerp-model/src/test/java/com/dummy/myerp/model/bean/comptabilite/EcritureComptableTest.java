@@ -174,7 +174,7 @@ public class EcritureComptableTest {
 
 
 
-        assertEquals("EcritureComptable{id=23, journal=JournalComptable{code='AX', libelle='Journal de banque'}, reference='AX-2020/00076', date=2020-12-28, libelle='Libellé', totalDebit=123.00, totalCredit=123.00, listLigneEcriture=[\n" +
+        assertEquals("EcritureComptable{id=23, journal=JournalComptable{code='AX', libelle='Journal de banque'}, reference='AX-2020/00076', date=2020-07-15, libelle='Libellé', totalDebit=123.00, totalCredit=123.00, listLigneEcriture=[\n" +
                 "LigneEcritureComptable{compteComptable=CompteComptable{numero=401, libelle='null'}, libelle='null', debit=123, credit=null}\n" +
                 "LigneEcritureComptable{compteComptable=CompteComptable{numero=411, libelle='null'}, libelle='null', debit=null, credit=123}\n" +
                 "]}", ecritureComptable.toString());

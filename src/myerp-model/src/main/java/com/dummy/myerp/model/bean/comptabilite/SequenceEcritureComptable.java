@@ -59,9 +59,10 @@ public class SequenceEcritureComptable {
         final StringBuilder vStB = new StringBuilder(this.getClass().getSimpleName());
         final String vSEP = ", ";
         vStB.append("{")
-            .append("annee=").append(annee)
-            .append(vSEP).append("derniereValeur=").append(derniereValeur)
-            .append("}");
+                .append("codeJournal=").append(codeJournal).append(vSEP)
+                .append("annee=").append(annee)
+                .append(vSEP).append("derniereValeur=").append(derniereValeur)
+                .append("}");
         return vStB.toString();
     }
 
