@@ -92,5 +92,5 @@ public interface ComptabiliteManager {
 
     BigDecimal RG_Compta_4(EcritureComptable pEcritureComptable);
 
-    void RG_Compta_1(EcritureComptable ecritureComptable) throws FunctionalException;
+    String RG_Compta_1(EcritureComptable ecritureComptable);
 }

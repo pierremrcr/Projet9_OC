@@ -202,7 +202,8 @@ public class ComptabiliteManagerImpl extends AbstractBusinessManager implements 
     }
 
     @Override
-    public void RG_Compta_1(EcritureComptable ecritureComptable) throws FunctionalException {
+    public String RG_Compta_1(EcritureComptable ecritureComptable)  {
+        return ecritureComptable.getSolde();
 
     }
 

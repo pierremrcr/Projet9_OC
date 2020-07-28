@@ -83,8 +83,8 @@ public class ComptabiliteManagerImplTest extends AbstractBusinessManager {
         manager.checkEcritureComptableUnit(vEcritureComptable);
     }
 
-    @Test(expected = FunctionalException.class)
-    public void checkEcritureComptableUnitRG1() throws Exception {
+    @Test
+    public void checkEcritureComptableUnitRG1() {
         EcritureComptable vEcritureComptable;
         vEcritureComptable = new EcritureComptable();
         vEcritureComptable.setJournal(new JournalComptable("AC", "Achat"));
@@ -97,6 +97,21 @@ public class ComptabiliteManagerImplTest extends AbstractBusinessManager {
         vEcritureComptable.getListLigneEcriture().add(new LigneEcritureComptable(new CompteComptable(1),
                 null, null, new BigDecimal(100)));
 
+        assertEquals("Le solde est négatif", manager.RG_Compta_1(vEcritureComptable));
+
+        EcritureComptable vEcritureComptable2;
+        vEcritureComptable2 = new EcritureComptable();
+        vEcritureComptable2.setJournal(new JournalComptable("BF", "Vente"));
+        vEcritureComptable2.setDate(new Date());
+        vEcritureComptable2.setLibelle("Libelle");
+        vEcritureComptable.getListLigneEcriture().add(new LigneEcritureComptable(new CompteComptable(1),
+                null, null, new BigDecimal(123)));
+        vEcritureComptable.getListLigneEcriture().add(new LigneEcritureComptable(new CompteComptable(1),
+                null, null, new BigDecimal(100)));
+        vEcritureComptable.getListLigneEcriture().add(new LigneEcritureComptable(new CompteComptable(1),
+                null, new BigDecimal(50), null));
+
+        assertEquals("Le solde est positif", manager.RG_Compta_1(vEcritureComptable));
 
     }
 
