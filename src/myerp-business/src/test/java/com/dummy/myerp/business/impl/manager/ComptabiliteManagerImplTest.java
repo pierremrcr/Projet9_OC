@@ -224,8 +224,10 @@ public class ComptabiliteManagerImplTest extends AbstractBusinessManager {
         FunctionalException thrown3 = assertThrows(FunctionalException.class, () -> manager.checkEcritureComptableUnit_Contraintes(ecritureComptable));
 
 
-        assertTrue(thrown3.getMessage().contains("L'écriture comptable ne respecte pas les contraintes de validation"));
-        assertTrue(thrown3.getMessage().contains("Valeur numérique hors limite"));
+        String message = thrown3.getMessage();
+        System.out.println("Message = " + message);
+        assertTrue(message.contains("L'écriture comptable ne respecte pas les contraintes de validation"));
+        assertTrue(message.contains("Valeur numérique hors limite"));
 
     }
 
