@@ -221,6 +221,7 @@ public class ComptabiliteManagerImplTest extends AbstractBusinessManager {
                 null, null,
                 new BigDecimal("123.987")));
 
+        /*
         FunctionalException thrown3 = assertThrows(FunctionalException.class, () -> manager.checkEcritureComptableUnit_Contraintes(ecritureComptable));
 
 
@@ -228,8 +229,12 @@ public class ComptabiliteManagerImplTest extends AbstractBusinessManager {
         System.out.println("Message = " + message);
         assertTrue(message.contains("L'écriture comptable ne respecte pas les contraintes de validation"));
         assertTrue(message.contains("Valeur numérique hors limite"));
+        */
 
+        FunctionalException thrown3 = assertThrows(FunctionalException.class, () -> manager.checkEcritureComptableUnit_Contraintes(ecritureComptable));
+        assertEquals("L'écriture comptable ne respecte pas les contraintes de validation. Valeur numérique hors limite (<13 chiffres>.<2 chiffres> attendus) La date ne doit pas être null. ne peut pas être nul Valeur numérique hors limite (<13 chiffres>.<2 chiffres> attendus)", thrown3.getMessage());
     }
+
 
 
     @Test
