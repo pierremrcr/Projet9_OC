@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="ff6deb9d-4279-4537-855f-0b0d464375dd" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/myerp-business/src/test/java/com/dummy/myerp/business/impl/manager/ComptabiliteManagerImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/myerp-business/src/test/java/com/dummy/myerp/business/impl/manager/ComptabiliteManagerImplTest.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/src/myerp-model/target/" />
     <ignored path="$PROJECT_DIR$/src/myerp-technical/target/" />
@@ -20,8 +21,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/myerp-business/src/main/java/com/dummy/myerp/business/impl/manager/ComptabiliteManagerImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="129" lean-forward="true" selection-start-line="129" selection-end-line="129" />
+            <state relative-caret-position="588">
+              <caret line="144" column="28" selection-start-line="144" selection-start-column="21" selection-end-line="144" selection-end-column="40" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#8482#8483#0" expanded="true" />
@@ -34,11 +35,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/myerp-business/src/test/java/com/dummy/myerp/business/impl/manager/ComptabiliteManagerImplTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="74">
-              <caret line="213" lean-forward="true" selection-start-line="213" selection-end-line="213" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="-411">
+              <caret line="9" column="61" selection-start-line="9" selection-start-column="61" selection-end-line="9" selection-end-column="61" />
             </state>
           </provider>
         </entry>
@@ -133,7 +131,7 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-63" />
+    <option name="x" value="31" />
     <option name="y" value="23" />
     <option name="width" value="1280" />
     <option name="height" value="773" />
@@ -505,6 +503,152 @@
               <item name="bean" type="462c0819:PsiDirectoryNode" />
               <item name="comptabilite" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="Projet9_OC" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Projet9_OC" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="myerp-technical" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Projet9_OC" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Projet9_OC" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="myerp-technical" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Projet9_OC" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Projet9_OC" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="myerp-technical" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Projet9_OC" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Projet9_OC" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="myerp-technical" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Projet9_OC" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Projet9_OC" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="myerp-technical" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Projet9_OC" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Projet9_OC" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="myerp-technical" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="dummy" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Projet9_OC" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Projet9_OC" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="myerp-technical" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="dummy" type="462c0819:PsiDirectoryNode" />
+              <item name="myerp" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Projet9_OC" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Projet9_OC" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="myerp-technical" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="dummy" type="462c0819:PsiDirectoryNode" />
+              <item name="myerp" type="462c0819:PsiDirectoryNode" />
+              <item name="technical" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Projet9_OC" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Projet9_OC" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="myerp-technical" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="dummy" type="462c0819:PsiDirectoryNode" />
+              <item name="myerp" type="462c0819:PsiDirectoryNode" />
+              <item name="technical" type="462c0819:PsiDirectoryNode" />
+              <item name="exception" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Projet9_OC" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+            </path>
+            <path>
+              <item name="Projet9_OC" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="&lt; 1.8 &gt;" type="70bed36:NamedLibraryElementNode" />
+            </path>
+            <path>
+              <item name="Projet9_OC" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="&lt; 1.8 &gt;" type="70bed36:NamedLibraryElementNode" />
+              <item name="rt.jar" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Projet9_OC" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="&lt; 1.8 &gt;" type="70bed36:NamedLibraryElementNode" />
+              <item name="rt.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Projet9_OC" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="&lt; 1.8 &gt;" type="70bed36:NamedLibraryElementNode" />
+              <item name="rt.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="util" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Projet9_OC" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: javax.validation:validation-api:1.1.0.Final" type="70bed36:NamedLibraryElementNode" />
+            </path>
+            <path>
+              <item name="Projet9_OC" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: javax.validation:validation-api:1.1.0.Final" type="70bed36:NamedLibraryElementNode" />
+              <item name="validation-api-1.1.0.Final.jar" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Projet9_OC" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: javax.validation:validation-api:1.1.0.Final" type="70bed36:NamedLibraryElementNode" />
+              <item name="validation-api-1.1.0.Final.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="javax" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Projet9_OC" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: javax.validation:validation-api:1.1.0.Final" type="70bed36:NamedLibraryElementNode" />
+              <item name="validation-api-1.1.0.Final.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="javax" type="462c0819:PsiDirectoryNode" />
+              <item name="validation" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -515,7 +659,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1597656069411" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1597669564965" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -650,48 +794,47 @@
       <workItem from="1595509669564" duration="4339000" />
       <workItem from="1595838904463" duration="7109000" />
       <workItem from="1595940152588" duration="4088000" />
-      <workItem from="1597222623160" duration="4497000" />
+      <workItem from="1597222623160" duration="7863000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="SequenceEcritureComptableTest_toStringTest - 2020.07.28 at 15h 45m 19s.xml">
-      <configuration name="SequenceEcritureComptableTest.toStringTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="SequenceEcritureComptableTest_toStringTest - 2020.07.28 at 15h 49m 42s.xml">
-      <configuration name="SequenceEcritureComptableTest.toStringTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="SequenceEcritureComptableTest - 2020.07.28 at 15h 50m 03s.xml">
-      <configuration name="SequenceEcritureComptableTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ComptabiliteManagerImplTest_checkEcritureComptableUnitRG6 - 2020.07.28 at 15h 54m 39s.xml">
-      <configuration name="ComptabiliteManagerImplTest.checkEcritureComptableUnitRG6" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ComptabiliteManagerImplTest_checkEcritureComptableUnitRG6 - 2020.07.28 at 15h 55m 08s.xml">
-      <configuration name="ComptabiliteManagerImplTest.checkEcritureComptableUnitRG6" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ComptabiliteManagerImplTest_checkEcritureComptableUnitRG7 - 2020.08.12 at 11h 44m 35s.xml">
-      <configuration name="ComptabiliteManagerImplTest.checkEcritureComptableUnitRG7" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ComptabiliteManagerImplTest_checkEcritureComptableUnit - 2020.08.17 at 11h 13m 32s.xml">
-      <configuration name="ComptabiliteManagerImplTest.checkEcritureComptableUnit" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ComptabiliteManagerImplTest_checkEcritureComptableUnitRG1 - 2020.08.17 at 11h 13m 50s.xml">
-      <configuration name="ComptabiliteManagerImplTest.checkEcritureComptableUnitRG1" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ComptabiliteManagerImplTest_checkEcritureComptableUnitRG7 - 2020.08.17 at 11h 14m 09s.xml">
-      <configuration name="ComptabiliteManagerImplTest.checkEcritureComptableUnitRG7" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="ComptabiliteManagerImplTest_addReferenceTest - 2020.08.17 at 11h 14m 26s.xml">
       <configuration name="ComptabiliteManagerImplTest.addReferenceTest" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="ComptabiliteManagerImplTest_checkEcritureComptableUnitRG7 - 2020.08.17 at 11h 19m 10s.xml">
+      <configuration name="ComptabiliteManagerImplTest.checkEcritureComptableUnitRG7" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ComptabiliteManagerImplTest_checkEcritureComptableUnitRG7 - 2020.08.17 at 11h 21m 22s.xml">
+      <configuration name="ComptabiliteManagerImplTest.checkEcritureComptableUnitRG7" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ComptabiliteManagerImplTest_checkEcritureComptableUnitRG7 - 2020.08.17 at 11h 40m 43s.xml">
+      <configuration name="ComptabiliteManagerImplTest.checkEcritureComptableUnitRG7" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ComptabiliteManagerImplTest_checkEcritureComptableUnitRG7 - 2020.08.17 at 14h 52m 36s.xml">
+      <configuration name="ComptabiliteManagerImplTest.checkEcritureComptableUnitRG7" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ComptabiliteManagerImplTest_checkEcritureComptableUnitRG7 - 2020.08.17 at 14h 53m 07s.xml">
+      <configuration name="ComptabiliteManagerImplTest.checkEcritureComptableUnitRG7" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ComptabiliteManagerImplTest_checkEcritureComptableUnitRG7 - 2020.08.17 at 14h 53m 32s.xml">
+      <configuration name="ComptabiliteManagerImplTest.checkEcritureComptableUnitRG7" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ComptabiliteManagerImplTest_checkEcritureComptableUnitRG7 - 2020.08.17 at 15h 04m 40s.xml">
+      <configuration name="ComptabiliteManagerImplTest.checkEcritureComptableUnitRG7" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ComptabiliteManagerImplTest_checkEcritureComptableUnitRG7 - 2020.08.17 at 15h 05m 05s.xml">
+      <configuration name="ComptabiliteManagerImplTest.checkEcritureComptableUnitRG7" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ComptabiliteManagerImplTest_checkEcritureComptableUnitRG7 - 2020.08.17 at 15h 05m 35s.xml">
+      <configuration name="ComptabiliteManagerImplTest.checkEcritureComptableUnitRG7" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="72730000" />
+    <option name="totallyTimeSpent" value="76096000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="51" y="315" width="1280" height="773" extended-state="0" />
-    <editor active="true" />
+    <frame x="31" y="23" width="1280" height="773" extended-state="0" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.28513733" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -702,13 +845,13 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.16593245" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.17621145" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.44640234" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Spring" order="7" />
-      <window_info anchor="bottom" id="Terminal" order="8" weight="0.2907489" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.2907489" />
       <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Messages" order="11" weight="0.27312776" />
@@ -730,9 +873,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/docker/dev/init/db/docker-entrypoint-initdb.d/01_create_schema.sql">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/myerp-consumer/src/test/java/com/dummy/myerp/consumer/dao/impl/db/dao/ComptabiliteDaoImplTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
@@ -790,13 +930,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-236">
           <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/myerp-business/src/main/java/com/dummy/myerp/business/impl/AbstractBusinessManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="14" column="22" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="22" />
         </state>
       </provider>
     </entry>
@@ -897,13 +1030,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/myerp-technical/src/main/java/com/dummy/myerp/technical/exception/FunctionalException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/myerp-model/src/main/java/com/dummy/myerp/model/validation/constraint/MontantComptable.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="49">
@@ -929,13 +1055,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1665">
           <caret line="111" column="21" lean-forward="true" selection-start-line="111" selection-start-column="21" selection-end-line="111" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/javax/validation/validation-api/1.1.0.Final/validation-api-1.1.0.Final.jar!/javax/validation/ConstraintViolation.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="9" column="17" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
         </state>
       </provider>
     </entry>
@@ -1076,6 +1195,48 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/myerp-technical/src/main/java/com/dummy/myerp/technical/exception/FunctionalException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-58">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/javax/validation/validation-api/1.1.0.Final/validation-api-1.1.0.Final.jar!/javax/validation/ConstraintViolation.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="9" column="17" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/javax/validation/validation-api/1.1.0.Final/validation-api-1.1.0.Final-sources.jar!/javax/validation/Validator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="45" column="36" selection-start-line="45" selection-start-column="36" selection-end-line="45" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/myerp-business/src/main/java/com/dummy/myerp/business/impl/AbstractBusinessManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="263">
+          <caret line="79" column="24" selection-start-line="79" selection-start-column="24" selection-end-line="79" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_171.jdk/Contents/Home/src.zip!/java/util/Set.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="646">
+          <caret line="127" column="16" selection-start-line="127" selection-start-column="16" selection-end-line="127" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/javax/validation/validation-api/1.1.0.Final/validation-api-1.1.0.Final-sources.jar!/javax/validation/ConstraintViolation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="26" column="17" selection-start-line="26" selection-start-column="17" selection-end-line="26" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/myerp-model/src/main/java/com/dummy/myerp/model/bean/comptabilite/LigneEcritureComptable.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-151">
@@ -1085,8 +1246,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/myerp-business/src/main/java/com/dummy/myerp/business/impl/manager/ComptabiliteManagerImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="129" lean-forward="true" selection-start-line="129" selection-end-line="129" />
+        <state relative-caret-position="588">
+          <caret line="144" column="28" selection-start-line="144" selection-start-column="21" selection-end-line="144" selection-end-column="40" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#8482#8483#0" expanded="true" />
@@ -1097,11 +1258,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/myerp-business/src/test/java/com/dummy/myerp/business/impl/manager/ComptabiliteManagerImplTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="74">
-          <caret line="213" lean-forward="true" selection-start-line="213" selection-end-line="213" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="-411">
+          <caret line="9" column="61" selection-start-line="9" selection-start-column="61" selection-end-line="9" selection-end-column="61" />
         </state>
       </provider>
     </entry>

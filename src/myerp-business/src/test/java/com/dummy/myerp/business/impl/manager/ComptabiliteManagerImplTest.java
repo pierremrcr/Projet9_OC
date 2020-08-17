@@ -8,7 +8,6 @@ import com.dummy.myerp.consumer.dao.contrat.DaoProxy;
 import com.dummy.myerp.model.bean.comptabilite.*;
 import com.dummy.myerp.technical.exception.FunctionalException;
 import com.dummy.myerp.technical.exception.NotFoundException;
-import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.jupiter.api.Assertions;
@@ -21,14 +20,10 @@ import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 
 import static java.sql.Date.valueOf;
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.Matchers.any;
 import static org.mockito.Mockito.when;
@@ -70,6 +65,7 @@ public class ComptabiliteManagerImplTest extends AbstractBusinessManager {
         vEcritureComptable.getListLigneEcriture().add(new LigneEcritureComptable(new CompteComptable(2),
                 null, null,
                 new BigDecimal(123)));
+
         manager.checkEcritureComptableUnit(vEcritureComptable);
 
 
@@ -209,11 +205,20 @@ public class ComptabiliteManagerImplTest extends AbstractBusinessManager {
 
     }
 
-    @Test
+    /**
+     * Verifie qu'une exception est lancee si une ligne d'ecriture a plus de 2 chiffres apres la virgule
+     * @throws Exception
+     */
+
+    @Test(expected = FunctionalException.class)
     public void checkEcritureComptableUnitRG7() throws Exception {
 
         EcritureComptable ecritureComptable = new EcritureComptable();
         ecritureComptable.setLibelle("Libelle");
+        ecritureComptable.setJournal(new JournalComptable("AC", "Achat"));
+        Calendar calendar = new GregorianCalendar(2018,1,1);
+        ecritureComptable.setDate(calendar.getTime());
+        ecritureComptable.setReference("AC-2018/00123");
         ecritureComptable.getListLigneEcriture().add(new LigneEcritureComptable(new CompteComptable(1),
                 null, new BigDecimal("123.987"),
                 null));
@@ -221,18 +226,9 @@ public class ComptabiliteManagerImplTest extends AbstractBusinessManager {
                 null, null,
                 new BigDecimal("123.987")));
 
-        /*
-        FunctionalException thrown3 = assertThrows(FunctionalException.class, () -> manager.checkEcritureComptableUnit_Contraintes(ecritureComptable));
 
+        manager.checkEcritureComptableUnit(ecritureComptable);
 
-        String message = thrown3.getMessage();
-        System.out.println("Message = " + message);
-        assertTrue(message.contains("L'écriture comptable ne respecte pas les contraintes de validation"));
-        assertTrue(message.contains("Valeur numérique hors limite"));
-        */
-
-        FunctionalException thrown3 = assertThrows(FunctionalException.class, () -> manager.checkEcritureComptableUnit_Contraintes(ecritureComptable));
-        assertEquals("L'écriture comptable ne respecte pas les contraintes de validation. Valeur numérique hors limite (<13 chiffres>.<2 chiffres> attendus) La date ne doit pas être null. ne peut pas être nul Valeur numérique hors limite (<13 chiffres>.<2 chiffres> attendus)", thrown3.getMessage());
     }
 
 
