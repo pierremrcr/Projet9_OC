@@ -1,13 +1,17 @@
 language: java
-script:
-  - cd src
-  - mvn install
-
 
 jdk: openjdk8
 
 services:
-  - postgresql
+  - docker
+
+before_install:
+  - cd docker/dev
+  - docker-compose up -d
+
+script:
+  - cd src
+  - mvn test -P test-business,test-consumer
 
 
 

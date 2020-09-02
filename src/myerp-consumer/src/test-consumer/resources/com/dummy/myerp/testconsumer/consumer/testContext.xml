@@ -10,7 +10,7 @@
 
 
     <!-- ==================== External datasource properties file ==================== -->
-    <context:property-placeholder location="classpath:/com/dummy/myerp/consumer/db-test.properties"/>
+    <context:property-placeholder location="classpath:/com/dummy/myerp/testconsumer/consumer/db-test.properties"/>
 
 
 
@@ -34,4 +34,3 @@
         <property name="maxWaitMillis" value="${maxWaitMillis}"/>
     </bean>
 </beans>
-
