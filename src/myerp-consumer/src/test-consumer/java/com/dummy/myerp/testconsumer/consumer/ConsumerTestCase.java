@@ -1,11 +1,9 @@
-package com.dummy.myerp.testbusiness.business;
+package com.dummy.myerp.testconsumer.consumer;
 
 
-import com.dummy.myerp.business.contrat.BusinessProxy;
-import com.dummy.myerp.business.impl.TransactionManager;
+import com.dummy.myerp.consumer.dao.contrat.DaoProxy;
 
-
-    /**
+/**
      * Classe mère des classes de test d'intégration de la couche Consumer
      */
     public abstract class ConsumerTestCase {

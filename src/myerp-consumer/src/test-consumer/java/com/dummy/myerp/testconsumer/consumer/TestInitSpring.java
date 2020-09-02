@@ -1,5 +1,6 @@
-package com.dummy.myerp.testbusiness.business;
+package com.dummy.myerp.testconsumer.consumer;
 
+import org.junit.Assert;
 import org.junit.Test;
 
 import static org.junit.Assert.assertNotNull;
