@@ -3,8 +3,6 @@ package com.dummy.myerp.testconsumer.consumer;
 import org.junit.Assert;
 import org.junit.Test;
 
-import static org.junit.Assert.assertNotNull;
-
 
 /**
  * Classe de test de l'initialisation du contexte Spring

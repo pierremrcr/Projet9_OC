@@ -91,4 +91,6 @@ public interface ComptabiliteDao {
     SequenceEcritureComptable getSequenceJournal(EcritureComptable pEcritureComptable) throws NotFoundException;
 
     SequenceEcritureComptable getSequenceEcritureComptable(int year, String codeJournal) throws NotFoundException;
+
+    List<SequenceEcritureComptable> getListSequenceEcritureComptable();
 }

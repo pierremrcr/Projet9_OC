@@ -4,6 +4,7 @@ import java.sql.Types;
 import java.util.Calendar;
 import java.util.List;
 
+import com.dummy.myerp.consumer.dao.impl.db.rowmapper.comptabilite.*;
 import com.dummy.myerp.model.bean.comptabilite.*;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
@@ -11,10 +12,6 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import com.dummy.myerp.consumer.dao.contrat.ComptabiliteDao;
-import com.dummy.myerp.consumer.dao.impl.db.rowmapper.comptabilite.CompteComptableRM;
-import com.dummy.myerp.consumer.dao.impl.db.rowmapper.comptabilite.EcritureComptableRM;
-import com.dummy.myerp.consumer.dao.impl.db.rowmapper.comptabilite.JournalComptableRM;
-import com.dummy.myerp.consumer.dao.impl.db.rowmapper.comptabilite.LigneEcritureComptableRM;
 import com.dummy.myerp.consumer.db.AbstractDbConsumer;
 import com.dummy.myerp.consumer.db.DataSourcesEnum;
 import com.dummy.myerp.technical.exception.NotFoundException;
@@ -241,6 +238,7 @@ public class ComptabiliteDaoImpl extends AbstractDbConsumer implements Comptabil
     public void setSQLdeleteEcritureComptable(String pSQLdeleteEcritureComptable) {
         SQLdeleteEcritureComptable = pSQLdeleteEcritureComptable;
     }
+
     @Override
     public void deleteEcritureComptable(Integer pId) {
         // ===== Suppression des lignes d'écriture
@@ -308,6 +306,19 @@ public class ComptabiliteDaoImpl extends AbstractDbConsumer implements Comptabil
         }
     }
 
+    private static String SQLloadListSequenceEcriture;
+
+    public void setSQLloadListSequenceEcriture(String SQLloadListSequenceEcriture) {
+        this.SQLloadListSequenceEcriture = SQLloadListSequenceEcriture;
+    }
+
+    @Override
+    public List<SequenceEcritureComptable> getListSequenceEcritureComptable() {
+        JdbcTemplate vJdbcTemplate = new JdbcTemplate(this.getDataSource(DataSourcesEnum.MYERP));
+        SequenceEcritureComptableRM sequenceRM = new SequenceEcritureComptableRM();
+        List<SequenceEcritureComptable> vList = vJdbcTemplate.query(SQLloadListSequenceEcriture, sequenceRM);
+        return vList;
+    }
 
 
     @Override

@@ -25,6 +25,11 @@
                 SELECT * FROM myerp.ecriture_comptable
             </value>
         </property>
+        <property name="SQLloadListSequenceEcriture">
+            <value>
+                SELECT * FROM myerp.sequence_ecriture_comptable
+            </value>
+        </property>
         <property name="SQLgetEcritureComptable">
             <value>
                 SELECT * FROM myerp.ecriture_comptable
