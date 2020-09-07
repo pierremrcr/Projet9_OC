@@ -40,5 +40,4 @@ public class ComptabiliteDaoImplTest extends ConsumerTestCase {
     }
 
 
-
 }
