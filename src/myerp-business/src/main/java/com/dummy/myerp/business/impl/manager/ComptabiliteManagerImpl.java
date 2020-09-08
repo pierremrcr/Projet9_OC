@@ -67,7 +67,6 @@ public class ComptabiliteManagerImpl extends AbstractBusinessManager implements 
         //On récupère l'année de l'écriture que l'on convertit au format calendar
         int yearEcritureComptable = convertDateToCalendar(pEcritureComptable.getDate()).get(Calendar.YEAR);
 
-
         String reference = pEcritureComptable.getJournal().getCode() + "-" + yearEcritureComptable + "/";
 
 
@@ -90,7 +89,14 @@ public class ComptabiliteManagerImpl extends AbstractBusinessManager implements 
             }
             } catch (NotFoundException notFoundException) {
                 reference += "00001";
-                getDaoProxy().getComptabiliteDao().insertSequenceEcritureComptable(yearEcritureComptable, pEcritureComptable.getJournal().getCode());
+                SequenceEcritureComptable sequenceEcritureComptable = null;
+                try {
+                   sequenceEcritureComptable = getDaoProxy().getComptabiliteDao().getSequenceJournal(pEcritureComptable);
+                } catch (NotFoundException e) {
+                    Integer derniereValeur = sequenceEcritureComptable.getDerniereValeur();
+                    getDaoProxy().getComptabiliteDao().insertSequenceEcritureComptable(yearEcritureComptable, pEcritureComptable.getJournal().getCode(), derniereValeur);
+                }
+
             }
             pEcritureComptable.setReference(reference);
         }
