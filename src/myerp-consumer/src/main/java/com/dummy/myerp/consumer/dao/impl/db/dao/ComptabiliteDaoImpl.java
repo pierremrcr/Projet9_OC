@@ -276,7 +276,7 @@ public class ComptabiliteDaoImpl extends AbstractDbConsumer implements Comptabil
 
         String sqlUpdate = "UPDATE myerp.sequence_ecriture_comptable SET derniere_valeur = :derniere_valeur where annee = :annee and journal_code = :journal_code";
         MapSqlParameterSource vSqlParams = new MapSqlParameterSource();
-        vSqlParams.addValue("derniere_valeur", sequenceEcritureComptable.getDerniereValeur() + 1);
+        vSqlParams.addValue("derniere_valeur", sequenceEcritureComptable.getDerniereValeur());
         vSqlParams.addValue("annee", sequenceEcritureComptable.getAnnee());
         vSqlParams.addValue("journal_code", sequenceEcritureComptable.getCodeJournal());
 
@@ -322,7 +322,7 @@ public class ComptabiliteDaoImpl extends AbstractDbConsumer implements Comptabil
 
 
     @Override
-    public void insertSequenceEcritureComptable(int year, String code) {
+    public void insertSequenceEcritureComptable(int year, String code, Integer derniereValeur) {
 
         NamedParameterJdbcTemplate vJdbcTemplate = new NamedParameterJdbcTemplate(getDataSource(DataSourcesEnum.MYERP));
 
@@ -330,8 +330,24 @@ public class ComptabiliteDaoImpl extends AbstractDbConsumer implements Comptabil
         MapSqlParameterSource vSqlParams = new MapSqlParameterSource();
         vSqlParams.addValue("journal_code", code);
         vSqlParams.addValue("annee", year);
-        vSqlParams.addValue("derniere_valeur", 1);
+        vSqlParams.addValue("derniere_valeur", derniereValeur);
         vJdbcTemplate.update(sql, vSqlParams);
+    }
+
+    /** SQLdeleteSequenceEcritureComptable */
+    private static String SQLdeleteSequenceEcritureComptable;
+    public void setSQLdeleteSequenceEcritureComptable(String pSQLdeleteSequenceEcritureComptable) {
+        this.SQLdeleteSequenceEcritureComptable = pSQLdeleteSequenceEcritureComptable;
+    }
+
+    public void deleteSequenceEcritureComptable(SequenceEcritureComptable sequence) {
+        // ===== Suppression de l'écriture
+        NamedParameterJdbcTemplate vJdbcTemplate = new NamedParameterJdbcTemplate(getDataSource(DataSourcesEnum.MYERP));
+        MapSqlParameterSource vSqlParams = new MapSqlParameterSource();
+        vSqlParams.addValue("journal_code", sequence.getCodeJournal());
+        vSqlParams.addValue("annee", sequence.getAnnee());
+
+        vJdbcTemplate.update(SQLdeleteSequenceEcritureComptable, vSqlParams);
     }
 
 

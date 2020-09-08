@@ -86,11 +86,13 @@ public interface ComptabiliteDao {
 
     SequenceEcritureComptable updateSequenceEcritureComptable(SequenceEcritureComptable sequenceEcritureComptable) throws NotFoundException;
 
-    void insertSequenceEcritureComptable(int yearEcritureComptable, String code);
+    void insertSequenceEcritureComptable(int yearEcritureComptable, String code, Integer derniereValeur);
 
     SequenceEcritureComptable getSequenceJournal(EcritureComptable pEcritureComptable) throws NotFoundException;
 
     SequenceEcritureComptable getSequenceEcritureComptable(int year, String codeJournal) throws NotFoundException;
 
     List<SequenceEcritureComptable> getListSequenceEcritureComptable();
+
+    void deleteSequenceEcritureComptable(SequenceEcritureComptable sequence);
 }
