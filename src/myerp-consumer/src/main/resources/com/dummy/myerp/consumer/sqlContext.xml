@@ -36,6 +36,13 @@
                 WHERE id = :id
             </value>
         </property>
+        <property name="SQLgetSequenceEcritureComptable">
+            <value>
+                SELECT * FROM myerp.sequence_ecriture_comptable
+                WHERE annee = :annee
+                AND journal_code = :journal_code
+            </value>
+        </property>
         <property name="SQLgetEcritureComptableByRef">
             <value>
                 SELECT * FROM myerp.ecriture_comptable

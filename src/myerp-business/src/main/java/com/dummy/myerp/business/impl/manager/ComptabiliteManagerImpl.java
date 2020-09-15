@@ -87,16 +87,10 @@ public class ComptabiliteManagerImpl extends AbstractBusinessManager implements 
                 //Update de la séquence avec la nouvelle valeur
                 getDaoProxy().getComptabiliteDao().updateSequenceEcritureComptable(sequenceEcritureComptable);
             }
+            //Dans le cas ou l'écriture n'est rattachée à aucune séquence, création d'une nouvelle référence et d'une nouvelle séquence correspondant à l'écriture
             } catch (NotFoundException notFoundException) {
                 reference += "00001";
-                SequenceEcritureComptable sequenceEcritureComptable = null;
-                try {
-                   sequenceEcritureComptable = getDaoProxy().getComptabiliteDao().getSequenceJournal(pEcritureComptable);
-                } catch (NotFoundException e) {
-                    Integer derniereValeur = sequenceEcritureComptable.getDerniereValeur();
-                    getDaoProxy().getComptabiliteDao().insertSequenceEcritureComptable(yearEcritureComptable, pEcritureComptable.getJournal().getCode(), derniereValeur);
-                }
-
+                getDaoProxy().getComptabiliteDao().insertSequenceEcritureComptable(yearEcritureComptable, pEcritureComptable.getJournal().getCode());
             }
             pEcritureComptable.setReference(reference);
         }
