@@ -9,10 +9,13 @@ import org.junit.Test;
 
 import javax.validation.constraints.AssertTrue;
 import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.util.Date;
 import java.util.List;
+
+import static java.sql.Date.valueOf;
 
 public class ComptabiliteDaoImplTest extends ConsumerTestCase {
 
@@ -177,6 +180,22 @@ public class ComptabiliteDaoImplTest extends ConsumerTestCase {
         Assert.assertEquals(4, sequenceEcritureComptableList.size());
 
     }
+/*
+    @Test
+    public void getSequenceJournalTest() throws NotFoundException {
+        EcritureComptable ecritureComptable = new EcritureComptable();
+        ecritureComptable.setLibelle("Libellé Test");
+
+        LocalDate localDate = LocalDate.of(2026, 9, 15);
+        Date date = valueOf(localDate);
+        ecritureComptable.setDate(date);
+
+        // Journal existant
+        ecritureComptable.setJournal(new JournalComptable("BQ", "Banque"));
+        Assert.assertEquals(52, dao.getSequenceJournal(ecritureComptable).getDerniereValeur().intValue());
+    }
+
+    */
 
     @Test
     public void isCodeJournalValidTest(){

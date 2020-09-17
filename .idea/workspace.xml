@@ -3,13 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="ff6deb9d-4279-4537-855f-0b0d464375dd" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/myerp-business/src/main/java/com/dummy/myerp/business/impl/manager/ComptabiliteManagerImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/myerp-business/src/main/java/com/dummy/myerp/business/impl/manager/ComptabiliteManagerImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/myerp-consumer/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/myerp-consumer/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/myerp-consumer/src/main/java/com/dummy/myerp/consumer/dao/contrat/ComptabiliteDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/myerp-consumer/src/main/java/com/dummy/myerp/consumer/dao/contrat/ComptabiliteDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/myerp-consumer/src/main/java/com/dummy/myerp/consumer/dao/impl/db/dao/ComptabiliteDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/myerp-consumer/src/main/java/com/dummy/myerp/consumer/dao/impl/db/dao/ComptabiliteDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/myerp-consumer/src/main/resources/com/dummy/myerp/consumer/sqlContext.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/myerp-consumer/src/main/resources/com/dummy/myerp/consumer/sqlContext.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.travis.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.travis.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/myerp-consumer/src/test/java/com/dummy/myerp/consumer/dao/impl/db/dao/ComptabiliteDaoImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/myerp-consumer/src/test/java/com/dummy/myerp/consumer/dao/impl/db/dao/ComptabiliteDaoImplTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/pom.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/src/myerp-model/target/" />
     <ignored path="$PROJECT_DIR$/src/myerp-technical/target/" />
@@ -41,8 +36,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/myerp-consumer/src/test/java/com/dummy/myerp/consumer/dao/impl/db/dao/ComptabiliteDaoImplTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="490">
-              <caret line="178" column="5" lean-forward="true" selection-start-line="178" selection-start-column="5" selection-end-line="178" selection-end-column="5" />
+            <state relative-caret-position="1200">
+              <caret line="208" lean-forward="true" selection-start-line="208" selection-end-line="208" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -53,8 +48,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/myerp-consumer/src/main/java/com/dummy/myerp/consumer/dao/impl/db/dao/ComptabiliteDaoImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="302">
-              <caret line="294" column="93" lean-forward="true" selection-start-line="294" selection-start-column="93" selection-end-line="294" selection-end-column="93" />
+            <state relative-caret-position="74">
+              <caret line="360" column="118" selection-start-line="360" selection-start-column="94" selection-end-line="360" selection-end-column="118" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -108,7 +103,6 @@
         <option value="$PROJECT_DIR$/src/myerp-consumer/src/test-consumer/java/com/dummy/myerp/testconsumer/consumer/ConsumerTestCase.java" />
         <option value="$PROJECT_DIR$/src/myerp-consumer/src/test-consumer/java/com/dummy/myerp/testconsumer/consumer/TestInitSpring.java" />
         <option value="$PROJECT_DIR$/src/myerp-consumer/src/main/java/com/dummy/myerp/consumer/dao/impl/db/rowmapper/comptabilite/SequenceEcritureComptableRM.java" />
-        <option value="$PROJECT_DIR$/.travis.yml" />
         <option value="$PROJECT_DIR$/src/pom.xml" />
         <option value="$PROJECT_DIR$/src/myerp-consumer/pom.xml" />
         <option value="$PROJECT_DIR$/src/myerp-business/pom.xml" />
@@ -117,6 +111,7 @@
         <option value="$PROJECT_DIR$/src/myerp-business/src/main/java/com/dummy/myerp/business/impl/manager/ComptabiliteManagerImpl.java" />
         <option value="$PROJECT_DIR$/src/myerp-consumer/src/main/java/com/dummy/myerp/consumer/dao/impl/db/dao/ComptabiliteDaoImpl.java" />
         <option value="$PROJECT_DIR$/src/myerp-consumer/src/test/java/com/dummy/myerp/consumer/dao/impl/db/dao/ComptabiliteDaoImplTest.java" />
+        <option value="$PROJECT_DIR$/.travis.yml" />
       </list>
     </option>
   </component>
@@ -172,7 +167,6 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-13" />
     <option name="y" value="23" />
     <option name="width" value="1280" />
     <option name="height" value="777" />
@@ -183,7 +177,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -730,14 +724,14 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1600176068164" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1600337147331" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -771,8 +765,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.ComptabiliteDaoImplTest.isCodeJournalValidTest">
-    <configuration name="ComptabiliteDaoImplTest.deleteSequenceEcritureComptableTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.ComptabiliteDaoImplTest.getSequenceJournalTest">
+    <configuration name="ComptabiliteDaoImplTest.getSequenceJournalTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="myerp-consumer" />
       <extension name="coverage">
         <pattern>
@@ -782,7 +776,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.dummy.myerp.consumer.dao.impl.db.dao" />
       <option name="MAIN_CLASS_NAME" value="com.dummy.myerp.consumer.dao.impl.db.dao.ComptabiliteDaoImplTest" />
-      <option name="METHOD_NAME" value="deleteSequenceEcritureComptableTest" />
+      <option name="METHOD_NAME" value="getSequenceJournalTest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -841,11 +835,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.ComptabiliteDaoImplTest.getSequenceJournalTest" />
         <item itemvalue="JUnit.ComptabiliteDaoImplTest.isCodeJournalValidTest" />
         <item itemvalue="JavaScript Debug.index.html" />
         <item itemvalue="JUnit.ComptabiliteDaoImplTest.insertSequenceEcritureComptableTest" />
         <item itemvalue="JUnit.ComptabiliteDaoImplTest.loadListLigneEcritureTest" />
-        <item itemvalue="JUnit.ComptabiliteDaoImplTest.deleteSequenceEcritureComptableTest" />
       </list>
     </recent_temporary>
   </component>
@@ -884,7 +878,9 @@
       <workItem from="1599655856194" duration="3079000" />
       <workItem from="1599752543542" duration="2767000" />
       <workItem from="1600077689122" duration="9142000" />
-      <workItem from="1600157026974" duration="4687000" />
+      <workItem from="1600157026974" duration="4809000" />
+      <workItem from="1600289686869" duration="765000" />
+      <workItem from="1600333404169" duration="1864000" />
     </task>
     <task id="LOCAL-00001" summary="update &quot;profile&quot;">
       <created>1599047823334</created>
@@ -928,16 +924,17 @@
       <option name="project" value="LOCAL" />
       <updated>1599571885786</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="SequenceEcritureComptableTest implemented">
+      <created>1600176157260</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1600176157260</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="ComptabiliteDaoImplTest_deleteSequenceEcritureComptableTest - 2020.09.14 at 17h 33m 20s.xml">
-      <configuration name="ComptabiliteDaoImplTest.deleteSequenceEcritureComptableTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ComptabiliteDaoImplTest_deleteSequenceEcritureComptableTest - 2020.09.14 at 17h 34m 56s.xml">
-      <configuration name="ComptabiliteDaoImplTest.deleteSequenceEcritureComptableTest" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="ComptabiliteDaoImplTest_loadListLigneEcritureTest - 2020.09.15 at 12h 05m 10s.xml">
       <configuration name="ComptabiliteDaoImplTest.loadListLigneEcritureTest" configurationId="JUnit" />
     </history-entry>
@@ -962,14 +959,20 @@
     <history-entry file="ComptabiliteDaoImplTest_isCodeJournalValidTest - 2020.09.15 at 15h 19m 18s.xml">
       <configuration name="ComptabiliteDaoImplTest.isCodeJournalValidTest" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="ComptabiliteDaoImplTest_getSequenceJournalTest - 2020.09.17 at 11h 35m 50s.xml">
+      <configuration name="ComptabiliteDaoImplTest.getSequenceJournalTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ComptabiliteDaoImplTest_getSequenceJournalTest - 2020.09.17 at 11h 37m 52s.xml">
+      <configuration name="ComptabiliteDaoImplTest.getSequenceJournalTest" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="133816000" />
+    <option name="totallyTimeSpent" value="136567000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-13" y="23" width="1280" height="777" extended-state="0" />
+    <frame x="0" y="23" width="1280" height="777" extended-state="0" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.29159936" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.30129242" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -978,13 +981,13 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.6248175" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.25985402" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.24233577" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.27737227" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Spring" order="7" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.20145985" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.1649635" />
       <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Messages" order="11" weight="0.33722627" />
@@ -1012,7 +1015,9 @@
     <MESSAGE value="methods ComptabiliteDaoImplTest implemented" />
     <MESSAGE value="addReference method updated" />
     <MESSAGE value="jacoco install" />
-    <option name="LAST_COMMIT_MESSAGE" value="jacoco install" />
+    <MESSAGE value="SequenceEcritureComptableTest implemented" />
+    <MESSAGE value="jacoco added to travis" />
+    <option name="LAST_COMMIT_MESSAGE" value="jacoco added to travis" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/myerp-business/src/main/resources/com/dummy/myerp/business/transactionContext.xml">
@@ -1245,13 +1250,6 @@
     <entry file="file://$PROJECT_DIR$/src/src/site/site.xml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/.travis.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="3" selection-start-line="13" selection-start-column="3" selection-end-line="13" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/myerp-business/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2430">
@@ -1325,16 +1323,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/myerp-consumer/src/main/java/com/dummy/myerp/consumer/dao/impl/db/dao/ComptabiliteDaoImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="302">
-          <caret line="294" column="93" lean-forward="true" selection-start-line="294" selection-start-column="93" selection-end-line="294" selection-end-column="93" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/myerp-business/src/main/java/com/dummy/myerp/business/impl/manager/ComptabiliteManagerImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="975">
@@ -1342,10 +1330,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/myerp-consumer/src/main/java/com/dummy/myerp/consumer/dao/impl/db/dao/ComptabiliteDaoImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="74">
+          <caret line="360" column="118" selection-start-line="360" selection-start-column="94" selection-end-line="360" selection-end-column="118" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.travis.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" column="2" selection-start-line="19" selection-start-column="2" selection-end-line="19" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/myerp-consumer/src/test/java/com/dummy/myerp/consumer/dao/impl/db/dao/ComptabiliteDaoImplTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="490">
-          <caret line="178" column="5" lean-forward="true" selection-start-line="178" selection-start-column="5" selection-end-line="178" selection-end-column="5" />
+        <state relative-caret-position="1200">
+          <caret line="208" lean-forward="true" selection-start-line="208" selection-end-line="208" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

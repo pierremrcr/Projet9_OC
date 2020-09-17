@@ -15,6 +15,9 @@ script:
   - cd ../docker/dev
   - docker-compose stop
 
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
+
 
 
 
