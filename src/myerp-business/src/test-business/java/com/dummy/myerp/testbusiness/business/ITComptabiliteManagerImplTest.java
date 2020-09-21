@@ -57,7 +57,7 @@ public class ITComptabiliteManagerImplTest extends BusinessTestCase {
 
         // INSERT
         manager.insertEcritureComptable(ecritureComptable);
-        Assert.assertEquals("BQ-2016/00053", ecritureComptable.getReference());
+        Assert.assertEquals("BQ-2016/00052", ecritureComptable.getReference());
         Assert.assertEquals(6, manager.getListEcritureComptable().size());
 
         // UPDATE

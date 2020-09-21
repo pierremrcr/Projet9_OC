@@ -193,6 +193,7 @@ public class ComptabiliteDaoImplTest extends ConsumerTestCase {
         ecritureComptable.setJournal(new JournalComptable("BQ", "Banque"));
         dao.insertEcritureComptable(ecritureComptable);
         dao.getSequenceJournal(ecritureComptable);
+        Assert.assertEquals(51, dao.getSequenceJournal(ecritureComptable).getDerniereValeur().intValue());
         Assert.assertEquals("BQ", dao.getSequenceJournal(ecritureComptable).getCodeJournal());
         dao.deleteEcritureComptable(ecritureComptable.getId());
     }
