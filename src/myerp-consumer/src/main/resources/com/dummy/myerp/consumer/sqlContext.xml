@@ -56,6 +56,13 @@
                 ORDER BY ligne_id
             </value>
         </property>
+        <property name="SQLgetSequenceEcritureComptableBycodeJournal">
+            <value>
+                SELECT * from myerp.sequence_ecriture_comptable
+                WHERE journal_code = :journal_code
+                AND annee = :annee
+            </value>
+        </property>
         <property name="SQLinsertEcritureComptable">
             <value>
                 INSERT INTO myerp.ecriture_comptable (

@@ -7,7 +7,6 @@ import com.dummy.myerp.testconsumer.consumer.ConsumerTestCase;
 import org.junit.Assert;
 import org.junit.Test;
 
-import javax.validation.constraints.AssertTrue;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -180,22 +179,27 @@ public class ComptabiliteDaoImplTest extends ConsumerTestCase {
         Assert.assertEquals(4, sequenceEcritureComptableList.size());
 
     }
-/*
+
     @Test
     public void getSequenceJournalTest() throws NotFoundException {
         EcritureComptable ecritureComptable = new EcritureComptable();
         ecritureComptable.setLibelle("Libellé Test");
 
-        LocalDate localDate = LocalDate.of(2026, 9, 15);
+        LocalDate localDate = LocalDate.of(2016, 9, 15);
         Date date = valueOf(localDate);
         ecritureComptable.setDate(date);
 
         // Journal existant
         ecritureComptable.setJournal(new JournalComptable("BQ", "Banque"));
+        dao.insertEcritureComptable(ecritureComptable);
+        dao.getSequenceJournal(ecritureComptable);
         Assert.assertEquals(52, dao.getSequenceJournal(ecritureComptable).getDerniereValeur().intValue());
+        Assert.assertEquals("BQ", dao.getSequenceJournal(ecritureComptable).getCodeJournal());
+
+        dao.deleteEcritureComptable(ecritureComptable.getId());
     }
 
-    */
+
 
     @Test
     public void isCodeJournalValidTest(){
