@@ -84,13 +84,18 @@ public interface ComptabiliteManager {
      */
     void deleteEcritureComptable(Integer pId);
 
-    void checkIfRefIsToTheRightFormat(EcritureComptable pEcritureComptable) throws FunctionalException;
+    void checkEcritureComptableUnit_Contraintes(EcritureComptable pEcritureComptable) throws FunctionalException;
 
-    void checkIfEcritureContainsAtLeastTwoLines(EcritureComptable pEcritureComptable) throws FunctionalException;
+    void checkEcritureComptableUnit_RG5(EcritureComptable pEcritureComptable) throws FunctionalException;
 
-    void checkIfEcritureIsEquilibree(EcritureComptable pEcritureComptable) throws FunctionalException;
+    void checkEcritureComptableUnit_RG3(EcritureComptable pEcritureComptable) throws FunctionalException;
 
-    BigDecimal RG_Compta_4(EcritureComptable pEcritureComptable);
+    void checkEcritureComptableUnit_RG2(EcritureComptable pEcritureComptable) throws FunctionalException;
 
-    String RG_Compta_1(EcritureComptable ecritureComptable);
+    BigDecimal checkEcritureComptableUnit_RG4(EcritureComptable pEcritureComptable);
+
+    String checkEcritureComptableUnit_RG1(EcritureComptable ecritureComptable);
+
+    void checkEcritureComptableUnit_RG6(EcritureComptable pEcritureComptable) throws FunctionalException;
+
 }

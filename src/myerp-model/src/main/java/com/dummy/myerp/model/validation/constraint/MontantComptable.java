@@ -23,7 +23,7 @@ import javax.validation.constraints.Digits;
  *      <li>{@link java.math.BigDecimal}</li>
  *  </ul>
  */
-@Digits(integer = 13, fraction = 2)
+@Digits(integer = 13, fraction = 2, message = "Le format du montant comptable est invalide: max 13 chiffres et 2 décimaux.")
 @Target({ ElementType.METHOD, ElementType.FIELD, ElementType.ANNOTATION_TYPE })
 @Retention(RetentionPolicy.RUNTIME)
 @Constraint(validatedBy = {})

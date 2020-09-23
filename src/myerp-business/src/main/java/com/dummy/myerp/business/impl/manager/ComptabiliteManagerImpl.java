@@ -104,7 +104,7 @@ public class ComptabiliteManagerImpl extends AbstractBusinessManager implements 
     @Override
     public void checkEcritureComptable(EcritureComptable pEcritureComptable) throws FunctionalException {
         this.checkEcritureComptableUnit(pEcritureComptable);
-        this.checkEcritureComptableContext(pEcritureComptable);
+        this.checkEcritureComptableUnit_RG6(pEcritureComptable);
     }
 
 
@@ -126,20 +126,24 @@ public class ComptabiliteManagerImpl extends AbstractBusinessManager implements 
                                               vViolations));
         }
 
-        checkIfEcritureIsEquilibree(pEcritureComptable);
+        checkEcritureComptableUnit_Contraintes(pEcritureComptable);
 
-        // ===== RG_Compta_3 : une écriture comptable doit avoir au moins 2 lignes d'écriture (1 au débit, 1 au crédit)
+        checkEcritureComptableUnit_RG1(pEcritureComptable);
 
-        checkIfEcritureContainsAtLeastTwoLines(pEcritureComptable);
+        checkEcritureComptableUnit_RG2(pEcritureComptable);
 
+        checkEcritureComptableUnit_RG3(pEcritureComptable);
 
-        //  ===== RG_Compta_5 : Format et contenu de la référence
+        checkEcritureComptableUnit_RG4(pEcritureComptable);
 
-        checkIfRefIsToTheRightFormat(pEcritureComptable);
+        checkEcritureComptableUnit_RG5(pEcritureComptable);
+
+        checkEcritureComptableUnit_RG6(pEcritureComptable);
+
 
     }
 
-    protected void checkEcritureComptableUnit_Contraintes(EcritureComptable pEcritureComptable) throws FunctionalException {
+    public void checkEcritureComptableUnit_Contraintes(EcritureComptable pEcritureComptable) throws FunctionalException {
         Set<ConstraintViolation<EcritureComptable>> vViolations = getConstraintValidator().validate(pEcritureComptable);
         if (!vViolations.isEmpty()) {
             Iterator<ConstraintViolation<EcritureComptable>> it = vViolations.iterator();
@@ -151,7 +155,7 @@ public class ComptabiliteManagerImpl extends AbstractBusinessManager implements 
         }
     }
 
-    public void checkIfRefIsToTheRightFormat(EcritureComptable pEcritureComptable) throws FunctionalException {
+    public void checkEcritureComptableUnit_RG5(EcritureComptable pEcritureComptable) throws FunctionalException {
 
         Integer currentYear = convertDateToCalendar(pEcritureComptable.getDate()).get(Calendar.YEAR);
 
@@ -160,13 +164,23 @@ public class ComptabiliteManagerImpl extends AbstractBusinessManager implements 
             throw new FunctionalException("Le code journal ne correspond pas au code journal de la reférence.");
         }
 
+        // Vérifie que le code du journal dans la référence correspond au journal de l'écriture
+        String codeJournalInReference = pEcritureComptable.getReference().substring(0, 2);
+        if (!codeJournalInReference.equals(pEcritureComptable.getJournal().getCode())) {
+            throw new FunctionalException("Format de la référence incorrect : le code journal ne correspond pas au journal de l'écriture.");
+        }
+
         String[] referenceSplitDate = referenceSplit[1].split("/", 5);
         if (Integer.parseInt(referenceSplitDate[0]) != currentYear ) {
             throw new FunctionalException("L'année dans la référence ne correspond pas à la date de l'écriture.");
         }
+
+        else {
+            throw new FunctionalException("La référence ne peut pas être null.");
+        }
     }
 
-    public void checkIfEcritureContainsAtLeastTwoLines(EcritureComptable pEcritureComptable) throws FunctionalException {
+    public void checkEcritureComptableUnit_RG3(EcritureComptable pEcritureComptable) throws FunctionalException {
         int vNbrCredit = 0;
         int vNbrDebit = 0;
         for (LigneEcritureComptable vLigneEcritureComptable : pEcritureComptable.getListLigneEcriture()) {
@@ -180,7 +194,7 @@ public class ComptabiliteManagerImpl extends AbstractBusinessManager implements 
             }
         }
         // On test le nombre de lignes car si l'écriture à une seule ligne
-        //      avec un montant au débit et un montant au crédit ce n'est pas valable
+        // avec un montant au débit et un montant au crédit ce n'est pas valable
         if (pEcritureComptable.getListLigneEcriture().size() < 2
                 || vNbrCredit < 1
                 || vNbrDebit < 1) {
@@ -189,7 +203,7 @@ public class ComptabiliteManagerImpl extends AbstractBusinessManager implements 
         }
     }
 
-    public void checkIfEcritureIsEquilibree(EcritureComptable pEcritureComptable) throws FunctionalException {
+    public void checkEcritureComptableUnit_RG2(EcritureComptable pEcritureComptable) throws FunctionalException {
         if (!pEcritureComptable.isEquilibree()) {
                throw new FunctionalException("L'écriture comptable n'est pas équilibrée.");
         }
@@ -197,18 +211,19 @@ public class ComptabiliteManagerImpl extends AbstractBusinessManager implements 
 
 
 
-    public BigDecimal RG_Compta_4(EcritureComptable pEcritureComptable)  {
-      return pEcritureComptable.getTotalCredit();
+    public BigDecimal checkEcritureComptableUnit_RG4(EcritureComptable pEcritureComptable)  {
+
+        return pEcritureComptable.getTotalCredit();
     }
 
     @Override
-    public String RG_Compta_1(EcritureComptable ecritureComptable)  {
+    public String checkEcritureComptableUnit_RG1(EcritureComptable ecritureComptable)  {
         return ecritureComptable.getSolde();
 
     }
 
 
-    protected void checkEcritureComptableContext(EcritureComptable pEcritureComptable) throws FunctionalException {
+    public void checkEcritureComptableUnit_RG6(EcritureComptable pEcritureComptable) throws FunctionalException {
         // ===== RG_Compta_6 : La référence d'une écriture comptable doit être unique
         if (StringUtils.isNoneEmpty(pEcritureComptable.getReference())) {
             try {
@@ -225,6 +240,7 @@ public class ComptabiliteManagerImpl extends AbstractBusinessManager implements 
                 }
             } catch (NotFoundException vEx) {
                 // Dans ce cas, c'est bon, ça veut dire qu'on n'a aucune autre écriture avec la même référence.
+                // Si l'écriture à vérifier est une mise à jour (id != null)
                 if(pEcritureComptable.getId() != null){
                     throw new FunctionalException("Aucune écriture comptable n'est enregistrée pour cette référence");
                 }

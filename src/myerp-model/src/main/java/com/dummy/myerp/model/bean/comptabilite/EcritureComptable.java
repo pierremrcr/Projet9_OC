@@ -22,7 +22,8 @@ public class EcritureComptable {
     /** The Id. */
     private Integer id;
     /** Journal comptable */
-    @NotNull private JournalComptable journal;
+    @NotNull (message = "Le journal comptable ne doit pas être null.")
+    private JournalComptable journal;
     /** The Reference. */
     @Pattern(message = "Le format de la référence n'est pas correct.", regexp = "\\w{2}-\\d{4}/\\d{5}")
     private String reference;
@@ -32,7 +33,7 @@ public class EcritureComptable {
 
     /** The Libelle. */
     @NotNull (message = "Le libellé ne doit pas être null.")
-    @Size(min = 1, max = 200)
+    @Size(message = "Le libellé doit être compris entre 1 et 200 caractères.", min = 1, max = 200)
     private String libelle;
 
     /** La liste des lignes d'écriture comptable. */
