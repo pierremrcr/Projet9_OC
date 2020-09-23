@@ -50,6 +50,7 @@ public class ITComptabiliteManagerImplTest extends BusinessTestCase {
         Date date = valueOf(localDate);
         ecritureComptable.setDate(date);
         ecritureComptable.setLibelle("Libelle");
+        manager.addReference(ecritureComptable);
         ecritureComptable.getListLigneEcriture().add(new LigneEcritureComptable(new CompteComptable(401), null, new BigDecimal(123), null));
         ecritureComptable.getListLigneEcriture().add(new LigneEcritureComptable(new CompteComptable(606), null, null, new BigDecimal(123)));
 
