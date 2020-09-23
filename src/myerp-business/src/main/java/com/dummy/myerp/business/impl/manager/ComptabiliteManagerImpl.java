@@ -253,7 +253,7 @@ public class ComptabiliteManagerImpl extends AbstractBusinessManager implements 
      */
     @Override
     public void insertEcritureComptable(EcritureComptable pEcritureComptable) throws FunctionalException {
-        this.checkEcritureComptable(pEcritureComptable);
+        this.checkEcritureComptableUnit(pEcritureComptable);
         TransactionManager transactionManager = getTransactionManager();
         TransactionStatus vTS = transactionManager.beginTransactionMyERP();
 

@@ -8,7 +8,6 @@ import com.dummy.myerp.model.bean.comptabilite.LigneEcritureComptable;
 import com.dummy.myerp.technical.exception.FunctionalException;
 import org.junit.Assert;
 import org.junit.Test;
-import org.springframework.test.context.ContextConfiguration;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
@@ -16,8 +15,6 @@ import java.util.Date;
 import java.util.List;
 
 import static java.sql.Date.valueOf;
-
-@ContextConfiguration(locations = "/com/dummy/myerp/business/applicationContext.xml")
 
 public class ITComptabiliteManagerImplTest extends BusinessTestCase {
 
@@ -41,8 +38,8 @@ public class ITComptabiliteManagerImplTest extends BusinessTestCase {
         Assert.assertEquals(5, ecritureComptableList.size());
     }
 
-    @Test
-    public void insertUpdateDeleteEcritureComptableTest() throws FunctionalException {
+    @Test(expected = FunctionalException.class)
+    public void insertUpdateDeleteEcritureComptableTest() throws Exception {
 
         EcritureComptable ecritureComptable = new EcritureComptable();
         ecritureComptable.setJournal(new JournalComptable("BQ", "Banque"));
@@ -50,7 +47,6 @@ public class ITComptabiliteManagerImplTest extends BusinessTestCase {
         Date date = valueOf(localDate);
         ecritureComptable.setDate(date);
         ecritureComptable.setLibelle("Libelle");
-        manager.addReference(ecritureComptable);
         ecritureComptable.getListLigneEcriture().add(new LigneEcritureComptable(new CompteComptable(401), null, new BigDecimal(123), null));
         ecritureComptable.getListLigneEcriture().add(new LigneEcritureComptable(new CompteComptable(606), null, null, new BigDecimal(123)));
 
