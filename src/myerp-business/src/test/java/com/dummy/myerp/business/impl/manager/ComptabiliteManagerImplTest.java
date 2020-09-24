@@ -301,6 +301,21 @@ public class ComptabiliteManagerImplTest extends AbstractBusinessManager {
         FunctionalException thrown = assertThrows(FunctionalException.class, () -> manager.checkEcritureComptableUnit_RG5(vEcritureComptable));
         assertEquals("Format de la référence incorrect : le code journal ne correspond pas au journal de l'écriture.", thrown.getMessage());
 
+        // Année incorrecte
+        vEcritureComptable.setReference("AC-2019/00003");
+        FunctionalException thrown1 = assertThrows(FunctionalException.class, () -> manager.checkEcritureComptableUnit_RG5(vEcritureComptable));
+        assertEquals("Format de la référence incorrect : l'année indiquée dans la référence ne correspond pas à la date de l'écriture.", thrown1.getMessage());
+
+        // Séquence incorrecte
+        vEcritureComptable.setReference("AC-2020/3");
+        FunctionalException thrown2 = assertThrows(FunctionalException.class, () -> manager.checkEcritureComptableUnit_RG5(vEcritureComptable));
+        assertEquals("Format de la référence incorrect : le numéro de séquence doit être représenté avec 5 chiffres.", thrown2.getMessage());
+
+        // Séparateurs incorrects
+        vEcritureComptable.setReference("AC/2020/00003");
+        FunctionalException thrown4 = assertThrows(FunctionalException.class, () -> manager.checkEcritureComptableUnit_RG5(vEcritureComptable));
+        assertEquals("Format de la référence incorrect : le code journal est suivi d'un - et l'année d'un /", thrown4.getMessage());
+
 
     }
 
